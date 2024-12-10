@@ -1,6 +1,8 @@
 # WebDev_Projects
 
 # Web_Dev_Class
+https://thor.quincy.edu/~r.sutton16/
+as long as Quincy University does not take the site down, it will be available at that link above, Thank You for reading this(    :)
 -P1
     -This project was about simple HTML and CSS
     -Features
