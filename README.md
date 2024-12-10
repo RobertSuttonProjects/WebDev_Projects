@@ -1,5 +1,5 @@
 # WebDev_Projects
-
+This is a Rep that is just to show off all the amazing projects I have made relating to web dev career
 # Web_Dev_Class
 https://thor.quincy.edu/~r.sutton16/
 as long as Quincy University does not take the site down, it will be available at that link above, Thank You for reading this(    :)
