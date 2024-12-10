@@ -1,0 +1,453 @@
+@font-face {
+    font-family: 'GameFont';
+    src: url('assets/fonts/gamefont.ttf');
+}
+
+/* Body */
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: black;
+    font-family: 'gameFont', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+button {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 5px;
+}
+
+p:hover {
+    transition: 5s ease;
+    box-shadow: rgba(255, 255, 255, 0.247) 0px 5px 5px 0px;
+}
+
+/* Nav Bar */
+
+nav {
+    margin: none;
+    padding: none;
+    width: 100%;
+    height: 100vh;
+    background-image: url("assets/videos/MarioHeaderBackground.gif");
+    background-size: cover;
+    background-size: 100% 100%;
+    justify-content: center;
+}
+
+#topRow {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#topRow img {
+    display: block;
+    width: 90px;
+    height: 90px;
+    margin: 10px;
+}
+
+#navGroup {
+    width: 80%;
+    height: 100%;
+}
+
+#navList {
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+#currentUser {
+    display: flex;
+    width: fit-content;
+    margin-right: 10px;
+    padding: 10px;
+    text-decoration: none;
+    align-items: center;
+    color: white;
+    font-size: 1.2em;
+    text-wrap: nowrap;
+    background-color: rgba(255, 255, 255, 0.295);
+    background-image: url("assets/images/blackBox.jpg");
+    transition: 1s;
+    background-position-x: -100%;
+    background-repeat: no-repeat;
+    transition: 1s ease;
+
+}
+#currentUser:hover{
+    transition: 1s ease;
+    background-position-x: 0px;
+}
+
+#navList ul {
+    width: 90%;
+    height: fit-content;
+    list-style: none;
+    display: flex;
+    justify-content: right;
+}
+
+.phoneCSS {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    #navList ul {
+        display: none;
+    }
+
+    .phoneCSS {
+        display: block;
+    }
+}
+
+#navList ul li {
+    height: fit-content;
+    margin-right: 20px;
+}
+
+#navList ul li a {
+    display: flex;
+    flex-wrap: wrap;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position-y: 100px;
+    background-position-x: 50%;
+    background-image: url("assets/videos/marioRotate.gif");
+    border-bottom: solid rgba(255, 255, 255, 0)5px;
+    transition: .5s ease-in-out;
+}
+
+#navList ul li a:hover {
+    border-bottom: solid rgb(12, 59, 2) 5px;
+    background-position-y: 0px;
+    transition: 1s ease-in-out;
+}
+
+#navList ul li a:active {
+    background-image: url("assets/videos/marioRunning.gif");
+    background-repeat: no-repeat;
+    background-position-y: 100px;
+    background-size: 100% 100%;
+    background-position-x: 50%;
+    border-bottom: solid rgb(12, 59, 2) 5px;
+    background-position-y: 0px;
+}
+
+/* Text on Header Image */
+
+#title {
+    width: 100%;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    border-top: solid rgba(255, 255, 255, 0.171) 1px;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    overflow: hidden;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: solid rgba(255, 255, 255, 0.308) 1px;
+}
+
+#logo {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+#logo img {
+    max-width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+#quick-links {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#quick-links h3 {
+    width: 100%;
+    text-align: center;
+}
+
+#quick-links ul {
+    width: 80%;
+    height: fit-content;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+#quick-links ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    width: 100%;
+    background-image: url("assets/videos/marioRotate.gif");
+    background-repeat: no-repeat;
+    background-position-y: -100px;
+    border-radius: 10px;
+    background-position-x: 50%;
+    border-top: solid rgba(12, 59, 2, 0) 5px;
+    padding: 10px;
+    transition: .5s ease-in-out;
+}
+
+#quick-links ul li a:hover {
+    border-top: solid rgb(12, 59, 2) 5px;
+    background-position-y: 0px;
+    transition: 1s ease-in-out;
+}
+
+#contact-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#contact-info h3 {
+    width: 100%;
+    text-align: center;
+}
+
+#contact-info p {
+    text-align: center;
+}
+
+#right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+/* Sign Up */
+
+form {
+    background-color: black;
+    border-radius: 10%;
+    width: 100%;
+    display: flex;
+    margin-top: -8vh;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    align-items: center;
+}
+
+form input {
+    width: 20%;
+    background-color: black;
+    border-radius: 10px;
+    height: 20px;
+    border: solid white 3px;
+    color: white;
+    font-family: 'gameFont', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+form input[type="submit"] {
+    margin-top: 20px;
+    width: 10%;
+    background-color: rgba(128, 128, 128, 0);
+    transition: .5s ease-in;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: green;
+}
+
+.change-sign {
+    width: 80%;
+    display: flex;
+    justify-content: right;
+    color: red;
+    text-decoration: none;
+    transition: .5s ease-in;
+}
+
+.change-sign:hover {
+    color: green;
+    transition: .5s ease-in;
+}
+
+/* Games page */
+
+h5 {
+    width: 100%;
+    border-bottom: solid rgba(255, 255, 255, 0.1) 1px;
+    border-top: solid rgba(255, 255, 255, 0.1) 1px;
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+    text-transform: uppercase;
+
+    background-image: url("assets/videos/marioRunning2.gif");
+    background-position-x: -20%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 1s;
+    background-color: rgba(22, 59, 13, .2);
+}
+
+h5:hover {
+    background-color: blue;
+    background-position-x: 120%;
+    transition: 10s;
+}
+
+#show_game_title {
+    width: 70%;
+    margin-left: 7%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#show_game_title li {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+
+#game-filter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+#game-filter button {
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    border: solid green 3px;
+    box-sizing: content-box;
+}
+
+#games-content {
+    color: white;
+    border: solid black 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-content div {
+    display: flex;
+    justify-content: center;
+}
+
+.gamePF {
+    display: flex;
+    justify-content: space-between;
+    border: solid white 1px;
+    border-radius: 10px;
+    width: 80%;
+    margin-top: 10px;
+}
+
+#game_title {
+    max-width: 10%;
+    text-align: left;
+}
+
+.words {
+    display: flex;
+    align-items: center;
+    max-width: 80%;
+}
+
+.words p {
+    width: 30%;
+    padding: 20px;
+}
+
+.buttons {
+    width: 20%;
+    display: flex;
+    justify-content: right;
+    align-items: end;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.buttons button {
+    background-color: gray;
+    color: black;
+    border: solid white 1px;
+    border-radius: 10px;
+    margin: 5px;
+    width: 100%;
+    height: 33%;
+    cursor: pointer;
+}
+
+/* About */
+
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+    width: 100%;
+}
+
+.about p {
+    margin-top: 20px;
+    width: 60%;
+    text-align: justify;
+    line-height: 1.5em;
+}
+
+/* Contact */
+
+.contact {
+    margin-top: 20px;
+    width: 100%;
+    line-height: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact p,
+.contact h3 {
+    color: white;
+    margin-top: 20px;
+    width: 80%;
+    line-height: 1.5em;
+    text-align: center;
+}

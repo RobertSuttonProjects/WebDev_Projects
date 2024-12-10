@@ -1,0 +1,300 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: black;
+    color: white;
+
+}
+
+/* Navbar things ------------------------------------------------------*/
+
+.header {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#a-logo {
+    width: 22%;
+    height: auto;
+}
+
+#a-logo img {
+    width: 100%;
+    height: 100%;
+}
+
+nav {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    nav {
+        display: flex;
+        width: 40%;
+        padding: 0%;
+    }
+}
+
+nav ul {
+    display: flex;
+    overflow: hidden;
+    align-items: left;
+    justify-content: left;
+    list-style: none;
+    text-transform: capitalize;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: .95em;
+}
+
+nav ul li {
+    position: relative;
+    margin-right: 30px;
+    margin-top: 10px;
+    padding: 1px 0px;
+    height: fit-content;
+    border-bottom: 2px solid transparent;
+    transition: 0.5s ease-out;
+}
+
+nav ul li:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.993);
+}
+
+.signout-panel {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+
+.signout-panel a {
+    color: inherit;
+    font-family: inherit;
+    text-decoration: none;
+    width: fit-content;
+    border-bottom: rgba(255, 255, 255, 0) solid 1px;
+    transition: 0.5s ease-in;
+    margin-right: 15px;
+}
+
+.signout-panel a:hover {
+    border-bottom: white solid 1px;
+    background-color: rgba(255, 255, 255, 0.116);
+}
+
+/* image sections on index ------------------------------------------------------*/
+
+.section-block {
+    position: absolute;
+    top: -5%;
+    z-index: -1;
+}
+
+.section {
+    position: relative;
+    width: 100vw;
+    height: fit-content;
+}
+
+.section img,
+.section video {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.content {
+    position: absolute;
+    z-index: 1;
+    left: 10%;
+    margin: 0px;
+    padding: 0px;
+    bottom: 10%;
+    width: 10%;
+}
+
+/* Learn More Button on index images ------------------------------------------------------*/
+
+.learn-more-button {
+    border: white solid 1px;
+    background-color: rgba(0, 0, 0, 0);
+    transition: .5s ease-in;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    justify-items: center;
+    text-transform: uppercase;
+    padding: 10px;
+    width: 100%;
+
+}
+
+.learn-more-button a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.learn-more-button:hover {
+    background-color: rgba(255, 255, 255, 0.219);
+    transition: .5s ease-in;
+    color: black;
+}
+
+/* Login Page stuff------------------------------------------------------*/
+#login-box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#login-form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-form input {
+    width: 100%;
+    background-color: white;
+}
+
+#login-form p {
+    width: 100%;
+    justify-content: center;
+}
+
+#submit-button {
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+#submit-button:hover {
+    cursor: pointer;
+
+}
+
+/* Rock Paper Scissors ---------------------------------------------*/
+
+#rps-content {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.rps-select input {
+    opacity: 0%;
+}
+
+.rps-select input:checked {
+    opacity: 100%;
+}
+
+.rps-select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    max-width: 200px;
+    min-height: 100px;
+    max-height: 200px;
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border: solid rgba(255, 255, 255, 0.178) 1px;
+    background-color: rgba(56, 56, 56, 0.137);
+    transition: 0.3s ease-in;
+    margin: 5px 10px;
+}
+
+.rps-select:hover {
+    cursor: pointer;
+    border: solid rgba(255, 255, 255, 0.575) 1px;
+    background-color: rgb(56, 56, 56);
+}
+
+#rps-description {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Rock paper scissors but display screen instead of buttons*/
+
+#rps-display {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    height: auto;
+}
+
+#player-score-panel {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#rps-display a {
+    width: 100%;
+    text-align: center;
+}
+
+footer {
+    position: relative;
+    width: 95%;
+    padding: 10px;
+    margin: 10px, auto;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.contactInfo p {
+    margin: 10px 0;
+}
+
+.rightReserved {
+    width: 100%;
+    margin-top: 20px;
+    border-top: 1px solid #8686861e;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #d8d8d85b;
+    justify-content: center;
+}
+
+.contactInfo h3 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+}
+
+.contactInfo a {
+    color: white;
+}
