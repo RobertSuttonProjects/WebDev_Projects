@@ -40,4 +40,12 @@ as long as Quincy University does not take the site down, it will be available a
         -Database for games and user accounts
         -AJAX
 # Media-Verse
-Movie, Tv Show, Video Game all in one catalog app that allows users to search, discover, and find streaming/stores that the media item is on
+## -Discription
+    Movie, Tv Show, Video Game all in one catalog app that allows users to search, discover, and find streaming/stores that the media item is on
+## -Skills Used
+    TMDb API, fetch, Jquery, HTML, CSS, JavaScript, PHP, and more :)
+
+# If You Made It This Far
+## Thank You
+    From the bottom of my heart, thank you for reading into my coding adventure so far
+    
