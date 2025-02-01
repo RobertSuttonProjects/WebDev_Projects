@@ -1,15 +1,24 @@
+/**
+ * First Setup for when page loads
+ */
 $(document).ready(async function () {
     setMovieDateFilter();
     setMovieGenreFilter("en")
     setOnMovieFilterChange();
 })
 
+/**
+ * Gets movie data from imdb, 
+ * THERE IS NO API KEY as I have not setup a seperate file for github yet
+ * @param {*} URL 
+ * @returns 
+ */
 async function fetchMovieData(URL) {
     const options = {
         method: 'GET',
         headers: {
             accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwYzJmN2RiNDFhMDc5OTYzZWU3MjkxYWY3OGYxZjFlZSIsIm5iZiI6MTczNjk5NjA5Ni42NDQsInN1YiI6IjY3ODg3NTAwMzg5MjAzOTNhZDFkMmNkMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PjVqrSBZLif9fXjhlo78_LTPK-BWvaMEN_fsqnY5wro'
+            Authorization: ''
         }
     };
 
@@ -18,6 +27,9 @@ async function fetchMovieData(URL) {
         .catch(err => console.error(err));
 }
 
+/**
+ * Allows all decades to be added to movie filter from 1850-present decade
+ */
 function setMovieDateFilter() {
     let currentYear = new Date().getFullYear()
     currentDecade = currentYear - currentYear % 10
@@ -26,6 +38,10 @@ function setMovieDateFilter() {
     }
 }
 
+/**
+ * Allows for a genres to be added based on user language
+ * @param {*} language 
+ */
 async function setMovieGenreFilter(language) {
     const URL = 'https://api.themoviedb.org/3/genre/movie/list?language=en'
     const data = await fetchMovieData(URL)
@@ -35,11 +51,10 @@ async function setMovieGenreFilter(language) {
     });
 }
 
+/**
+ * When user changes movie-filter the inner function is called
+ */
 function setOnMovieFilterChange() {
-    //movie-filter-genre
-    //movie-filter-year
-    //movie-filter-language
-    //movie-filter-sort
 
     $("#movie-filter-genre, #movie-filter-year, #movie-filter-language, #movie-filter-sort").on("change", function () {
         const genre = $("#movie-filter-genre").val() || "";
@@ -51,12 +66,23 @@ function setOnMovieFilterChange() {
     });
 }
 
+/**
+ * This is called based on movie discover filter from the above function
+ * @param {*} genre 
+ * @param {*} year 
+ * @param {*} language 
+ * @param {*} sort 
+ */
 async function discoverMovie(genre, year, language, sort) {
     const URL = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=${language}&page=${1}&release_date.gte=${year + "-1-1"}&release_date.lte=${parseInt(year) + 9 + "-12-31"}&sort_by=${sort}&with_genres=${genre}`
     data = await fetchMovieData(URL)
     setMovieResults(data.results)
 }
 
+/**
+ * This allows discover movie, and movie search to both allow a similar look based on returned data
+ * @param {*} data 
+ */
 function setMovieResults(data) {
     $("#movie-search-results").empty();
     data.forEach(element => {
@@ -64,12 +90,22 @@ function setMovieResults(data) {
     });
 }
 
-function onMovieCardClick(id){
+/**
+ * when a movie is clicked from setMovieResults, this function opens details page with an id of the movie
+ * @param {*} id 
+ */
+function onMovieCardClick(id) {
     window.location.href = `details.php?id=${id}`
 }
 
-async function loadDetails(itemID, type){
-    if(type != "movie"){
+/**
+ * This loads the details of the movie for details page, but does not set the html, setMovieDetails is for html
+ * @param {*} itemID 
+ * @param {*} type 
+ * @returns 
+ */
+async function loadDetails(itemID, type) {
+    if (type != "movie") {
         return;
     }
     console.log(itemID)
@@ -83,15 +119,30 @@ async function loadDetails(itemID, type){
     const runtime = data.runtime;
     const popular = "data.backdrop_path";
     const recommended = "data.backdrop_path";
-    setMovieDetails(backdrop, poster, title, overview, release, runtime, popular, recommended)
+    const streaming = "data.backdrop_path";
+
+    setMovieDetails(backdrop, poster, title, overview, release, runtime, popular, recommended, streaming)
 }
 
-function setMovieDetails(backdrop, poster, title, overview, release, runtime, popular, recommended){
+/**
+ * Sets HTML for details page for movies
+ * @param {*} backdrop 
+ * @param {*} poster 
+ * @param {*} title 
+ * @param {*} overview 
+ * @param {*} release 
+ * @param {*} runtime 
+ * @param {*} popular 
+ * @param {*} recommended 
+ */
+function setMovieDetails(backdrop, poster, title, overview, release, runtime, popular, recommended, streaming) {
     $("#title").append(title);
     $("#detail-overview").append(overview);
     $("#detail-release").append(release);
     $("#detail-runtime").append(runtime);
     //$("#detail-popular").append(popular);
+    //$("#detail-recommended").append(recommended);
+    //$("#detail-streaming").append(streaming);
     $("#detail-poster").attr("src", "https://image.tmdb.org/t/p/w500/" + poster);
     $("#detail-backdrop").attr("src", "https://image.tmdb.org/t/p/w500/" + backdrop);
 }
