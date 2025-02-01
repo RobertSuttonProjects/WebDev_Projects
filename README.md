@@ -2,7 +2,7 @@
 This is a Rep that is just to show off all the amazing projects I have made relating to web dev career
 # Web_Dev_Class
 https://thor.quincy.edu/~r.sutton16/
-as long as Quincy University does not take the site down, it will be available at that link above, Thank You for reading this(    :)
+as long as Quincy University does not take the site down, it will be available at that link above, Thank You for reading this :)
 ## -P1
     -This project was about simple HTML and CSS
     -Features
@@ -39,3 +39,5 @@ as long as Quincy University does not take the site down, it will be available a
         -User Login and Signout (Database with secure passwords using hashing)
         -Database for games and user accounts
         -AJAX
+# Media-Verse
+Movie, Tv Show, Video Game all in one catalog app that allows users to search, discover, and find streaming/stores that the media item is on
